@@ -2,18 +2,43 @@
   <head>
     <title>Gal&Jonathan</title>
   </head>
+ <body>
    </body>
-<img style="width:100%; opacity:45%" src="pic1.jpg">
-<button>
+<div style="position: absolute">
+<img style="z-index:-1; ; width:100%; opacity:45%" src="pic2.jpg">
+<img style="z-index:-1; width:100%; opacity:45%" src="pic2.jpg">
+
+</div>
+<div class="containerBtn">
+<button class="buttonC">
 מה נסגר איתכם?
 </button>
-<button>
+<button class="buttonC">
 מה הלוז?
 </button>
-<button>
+<button class="buttonC">
 מה להביא?  
 </button>
-</img>
+</div>
 
   </body>
+<style>
+.buttonC {
+    width: 40%;
+    height: 8%;
+    background: white;
+    opacity: 70%;
+    font-size: 50px;
+    border-radius: 20px;
+box-shadow: 5px 5px 5px gray;
+}
+
+.containerBtn{
+     display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100vh;
+    align-items: center;
+}
+</style>
 </html>

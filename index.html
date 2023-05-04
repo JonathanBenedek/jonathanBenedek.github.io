@@ -1,6 +1,15 @@
 <html>
   <head>
     <title>Gal&Jonathan</title>
+<script>
+function onClick(){
+var htmlString = '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe1UOcId1u0XxJwNYuMG3ZNlRyEbtX9v4ssLGpd4-dZo8nBuw/viewform?embedded=true" width="640" height="425" frameborder="0" marginheight="0" marginwidth="0">בטעינה…</iframe>'
+  var div = document.createElement('div');
+  div.innerHTML = htmlString.trim();
+
+window.document.getElementById('cntBtn').appendChild(div);
+}
+</script>
   </head>
  <body>
    </body>
@@ -9,8 +18,8 @@
 <img style="z-index:-1; width:100%; opacity:45%" src="pic2.jpg">
 
 </div>
-<div class="containerBtn">
-<button class="buttonC">
+<div class="containerBtn" id="cntBtn">
+<button onclick="onClick()" class="buttonC">
 מה נסגר איתכם?
 </button>
 <button class="buttonC">
@@ -22,6 +31,7 @@
 </div>
 
   </body>
+
 <style>
 .buttonC {
     width: 40%;

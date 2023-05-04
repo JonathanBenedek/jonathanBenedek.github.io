@@ -2,30 +2,47 @@
   <head>
     <title>Gal&Jonathan</title>
 <script>
-function onClick(){
-var htmlString = '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe1UOcId1u0XxJwNYuMG3ZNlRyEbtX9v4ssLGpd4-dZo8nBuw/viewform?embedded=true" width="640" height="425" frameborder="0" marginheight="0" marginwidth="0">בטעינה…</iframe>'
-  var div = document.createElement('div');
-  div.innerHTML = htmlString.trim();
-
-window.document.getElementById('cntBtn').appendChild(div);
+  const whatToDoContentMsg = 'תביאו את זה ואת זה תודה';
+  const whatToTimling = 'לוזזזזז';
+  const whatToBring = 'מה להביא'
+function onClick(bodyContent){
+  const modalBodyElement = window.document.getElementById('modalBody');
+  const node = document.createTextNode(bodyContent);
+  modalBodyElement.appendChild(node);
+  const modal =  window.document.getElementById('modal');
+  modal.style.visibility = 'visible';
+}
+function closeModal(){
+  const modalBodyElement = window.document.getElementById('modalBody');
+  modalBodyElement.innerHTML = '';
+  modal.style.visibility = 'hidden';
 }
 </script>
   </head>
- <body>
+ <body style="margin: 0">
    </body>
 <div style="position: absolute">
 <img style="z-index:-1; ; width:100%; opacity:45%" src="pic2.jpg">
 <img style="z-index:-1; width:100%; opacity:45%" src="pic2.jpg">
 
 </div>
+<div id="modal" class="modal modalHidden">
+  <div style="margin: 20px;">
+    <div onclick="closeModal()">
+      X
+    </div>
+    <a id="modalBody"></a>
+  </div>
+
+</div>
 <div class="containerBtn" id="cntBtn">
-<button onclick="onClick()" class="buttonC">
+<button onclick="onClick(whatToDoContentMsg)" class="buttonC">
 מה נסגר איתכם?
 </button>
-<button class="buttonC">
+<button onclick="onClick(whatToTimling)" class="buttonC">
 מה הלוז?
 </button>
-<button class="buttonC">
+<button onclick="onClick(whatToBring)" class="buttonC">
 מה להביא?  
 </button>
 </div>
@@ -33,6 +50,31 @@ window.document.getElementById('cntBtn').appendChild(div);
   </body>
 
 <style>
+.modalShow{
+  visibility: visible;
+}
+.modal{
+  font-family: sans-serif;
+  height: 96vh;
+    width: 96vw;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #223344;
+    z-index: 1;
+    box-shadow: 10px 10px 10px gray;
+    margin: 2%;
+    opacity: 95%;
+    border-radius: 16px;
+    font-size: 50px;
+    color: white;
+    text-align: end;
+
+}
+
+.modalHidden{
+  visibility: hidden;
+}
 .buttonC {
     width: 40%;
     height: 8%;

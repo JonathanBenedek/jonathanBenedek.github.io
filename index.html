@@ -23,7 +23,6 @@ function closeModal(){
    </body>
 <div style="position: absolute">
 <img style="z-index:-1; ; width:100%; opacity:45%" src="pic2.jpg">
-<img style="z-index:-1; width:100%; opacity:45%" src="pic2.jpg">
 
 </div>
 <div id="modal" class="modal modalHidden">
@@ -32,7 +31,6 @@ function closeModal(){
       X
     </div>
     <a id="modalBody"></a>
-    <a href="https://www.waze.com/he/live-map/directions/%D7%9E%D7%A6%D7%95%D7%A7%D7%99-%D7%93%D7%A8%D7%92%D7%95%D7%AA?to=place.ChIJFaMNp608AxURZeIBjaazjbM">Navigation</a>
   </div>
 
 </div>
@@ -46,6 +44,10 @@ function closeModal(){
 <button onclick="onClick(whatToBring)" class="buttonC">
 מה להביא?  
 </button>
+<button class="buttonC">
+  <a style=" text-decoration: none;
+  color: black;" href="https://www.waze.com/he/live-map/directions/%D7%9E%D7%A6%D7%95%D7%A7%D7%99-%D7%93%D7%A8%D7%92%D7%95%D7%AA?to=place.ChIJFaMNp608AxURZeIBjaazjbM">ניווט</a> 
+  </button>
 </div>
 
   </body>
@@ -93,5 +95,17 @@ box-shadow: 5px 5px 5px gray;
     height: 100vh;
     align-items: center;
 }
+
+@media (orientation: landscape) {
+  .containerBtn {
+    flex-direction: row;
+  }
+
+  .buttonC{
+    height: 25%;
+
+  }
+}
+
 </style>
 </html>

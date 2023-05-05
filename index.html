@@ -19,12 +19,43 @@ function closeModal(){
 }
 </script>
   </head>
- <body style="margin: 0">
-   </body>
-<div style="position: absolute">
-<img style="z-index:-1; ; width:100%; opacity:45%" src="pic2.jpg">
+ <body style="margin: 0;
+ display: flex;
+ flex-direction: column;">
+ <div class="mainPage">
+  <div style="">
+    <img style="z-index:-1; ; width:100%; opacity:45%" src="pic3.svg">
+    
+  </div>
+  <div class="containerBtn" id="cntBtn">
+    <div class="header">
+      <p style="font-size: 38px;">
+        Gal & Jonathan
+    </p>
+    <p style="font-size: 38px;">
+      Wedding
+    </p>
+    </div>
 
-</div>
+  <div onclick="onClick(whatToDoContentMsg)" class="buttonC">
+  מה נסגר איתכם?
+  </div>
+  <div onclick="onClick(whatToTimling)" class="buttonC">
+  מה הלוז?
+  </div>
+  <div onclick="onClick(whatToBring)" class="buttonC">
+  מה להביא?  
+  </div>
+  <div class="buttonC">
+    <a style=" text-decoration: none;
+    color: black;" href="https://waze.com/ul/hsv95tquwu">ניווט</a> 
+  </div>
+  </div>
+ </div>
+<!-- <div>
+    Gal & Jonathan
+ </div> !-->
+
 <div id="modal" class="modal modalHidden">
   <div style="margin: 20px;">
     <div onclick="closeModal()">
@@ -34,25 +65,20 @@ function closeModal(){
   </div>
 
 </div>
-<div class="containerBtn" id="cntBtn">
-<button onclick="onClick(whatToDoContentMsg)" class="buttonC">
-מה נסגר איתכם?
-</button>
-<button onclick="onClick(whatToTimling)" class="buttonC">
-מה הלוז?
-</button>
-<button onclick="onClick(whatToBring)" class="buttonC">
-מה להביא?  
-</button>
-<button class="buttonC">
-  <a style=" text-decoration: none;
-  color: black;" href="https://waze.com/ul/hsv95tquwu">ניווט</a> 
-  </button>
-</div>
 
-  </body>
+
+</body>
 
 <style>
+  .header{
+    text-align: center;
+    font-size: 38px;
+  }
+  .mainPage{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
 .modalShow{
   visibility: visible;
 }
@@ -79,20 +105,20 @@ function closeModal(){
   visibility: hidden;
 }
 .buttonC {
+  text-align: center;
     width: 40%;
-    height: 8%;
     background: white;
     opacity: 70%;
     font-size: 50px;
     border-radius: 20px;
-box-shadow: 5px 5px 5px gray;
+box-shadow: 2px 2px 25px gray;
 }
 
 .containerBtn{
+  flex-grow: 1;
      display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 100vh;
     align-items: center;
 }
 

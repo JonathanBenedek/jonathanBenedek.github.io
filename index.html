@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Gal&Jonathan</title>
+    <title>Gal & Jonathan</title>
 <script>
   const whatToDoContentMsg = 'תביאו את זה ואת זה תודה';
   const whatToTimling = 'לוזזזזז';
@@ -29,27 +29,33 @@ function closeModal(){
   </div>
   <div class="containerBtn" id="cntBtn">
     <div class="header">
-      <p style="font-size: 38px;">
+      <p style="font-size: 60; font-family: fantasy; margin-bottom: 0px;">
         Gal & Jonathan
     </p>
-    <p style="font-size: 38px;">
-      Wedding
+    <p style="font-size: 50; margin-top: 0px;">
+      Our Wedding
     </p>
     </div>
+<div class="bodyHomePage">
 
-  <div onclick="onClick(whatToDoContentMsg)" class="buttonC">
-  מה נסגר איתכם?
+  <div onclick="onClick(whatToDoContentMsg)" class="rowContent">
+    <p>  מה בלוז </p>
+    <img src="calenderIcon.png" class="icon">
   </div>
-  <div onclick="onClick(whatToTimling)" class="buttonC">
-  מה הלוז?
-  </div>
-  <div onclick="onClick(whatToBring)" class="buttonC">
-  מה להביא?  
-  </div>
-  <div class="buttonC">
+  <div onclick="onClick(whatToTimling)" class="rowContent">
+    <p>  מה להביא </p> 
+    <img src="bagIcon.png" class="icon">
+   </div>
+  <div onclick="onClick(whatToBring)" class="rowContent">
     <a style=" text-decoration: none;
-    color: black;" href="https://waze.com/ul/hsv95tquwu">ניווט</a> 
+    color: black;" href="https://waze.com/ul/hsv95tquwu">איך מגיעים</a>     <img src="diractionIcon.png" class="icon">
   </div>
+  <div class="rowContent">
+    <p>  חשוב לדעת  </p> 
+    <img src="tipsIcon.png" class="icon">
+  </div>
+</div>
+
   </div>
  </div>
 <!-- <div>
@@ -70,6 +76,11 @@ function closeModal(){
 </body>
 
 <style>
+  .bodyHomePage{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
   .header{
     text-align: center;
     font-size: 38px;
@@ -81,6 +92,9 @@ function closeModal(){
   }
 .modalShow{
   visibility: visible;
+}
+.icon{
+  width: 180px;
 }
 .modal{
   font-family: sans-serif;
@@ -99,6 +113,14 @@ function closeModal(){
     color: white;
     text-align: end;
 
+}
+
+.rowContent{
+  align-items: center;
+  font-size: 40px;
+  display: flex;
+  flex-direction: row;
+  font-family: monospace;
 }
 
 .modalHidden{

@@ -21,10 +21,11 @@ function closeModal(){
   </head>
  <body style="margin: 0;
  display: flex;
- flex-direction: column;">
+ flex-direction: column;
+height: -webkit-fill-available;">
  <div class="mainPage">
   <div style="">
-    <img style="z-index:-1; max-height: 25vh ; width:100%; opacity:45%" src="pic3.svg">
+    <img style="z-index:-1; object-fit: cover; max-height: 20vh ; width:100%" src="weImage.png">
     
   </div>
   <div class="containerBtn" id="cntBtn">
@@ -32,7 +33,7 @@ function closeModal(){
       <p style="font-size: 4.5vh; font-family: titleFont; margin-bottom: 0px;">
         Gal & Jonathan
     </p>
-    <p style="font-family: subHeaderFont; font-size: 2.5vh; margin-top: 8px;">
+    <p style="font-family: subHeaderFont; font-size: 2.5vh; margin-top: 8px; margin-bottom: 0px;">
       Our Wedding
     </p>
     </div>
@@ -40,11 +41,11 @@ function closeModal(){
 
   <div onclick="onClick(whatToTimling)" class="rowContent">
     <p>   מה בלוז </p>
-    <img src="calenderIcon.png" class="icon">
+    <img src="calenderIcon2.png" class="icon">
   </div>
   <div onclick="onClick(whatToBring)" class="rowContent">
     <p> מה להביא </p>
-    <img src="bagIcon.png" class="icon">
+    <img src="bagIcon2.png" class="icon">
    </div>
   <div onclick="" class="rowContent">
     <a style=" text-decoration: none;
@@ -52,11 +53,15 @@ function closeModal(){
   </div>
   <div class="rowContent">
     <p style="">  כדאי לדעת  </p>
-    <img src="tipsIcon.png" class="icon">
+    <img src="tipsIcon2.png" class="icon">
   </div>
+
 </div>
 
   </div>
+ </div>
+ <img src="bgImage.png" class="bgImg1">
+ <img src="bgImage.png" class="bgImg2">
  </div>
 <!-- <div>
     Gal & Jonathan
@@ -100,13 +105,27 @@ function closeModal(){
   .mainPage{
     display: flex;
     flex-direction: column;
-    height: 100vh;
   }
 .modalShow{
   visibility: visible;
 }
+.bgImg1 {
+  position: absolute;
+    top: 15vh;
+    width: 45vw;
+    z-index: -1;
+    left: -10vw;
+}
+    .bgImg2 {
+        position: absolute;
+        bottom: 25vh;
+        width: 40vw;
+        z-index: -1;
+        right: -15vw;
+    }
 .icon{
-  width: 14vh;
+  width: 10vh;
+  margin: 22px;
 }
 .modal{
   font-family: sans-serif;
@@ -138,15 +157,7 @@ function closeModal(){
 .modalHidden{
   visibility: hidden;
 }
-.buttonC {
-  text-align: center;
-    width: 40%;
-    background: white;
-    opacity: 70%;
-    font-size: 50px;
-    border-radius: 20px;
-box-shadow: 2px 2px 25px gray;
-}
+
 
 .containerBtn{
      display: flex;

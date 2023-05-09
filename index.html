@@ -22,7 +22,8 @@ function closeModal(){
  <body style="margin: 0;
  display: flex;
  flex-direction: column;
-height: -webkit-fill-available;">
+height: -webkit-fill-available;
+overflow: hidden;">
  <div class="mainPage">
   <div style="">
     <img class="ourImg" src="weImage.png">
@@ -30,7 +31,7 @@ height: -webkit-fill-available;">
   </div>
   <div class="containerBtn" id="cntBtn">
     <div class="header">
-      <p style="font-size: 4.5vh; font-family: titleFont; margin-bottom: 0px;">
+      <p class="title" style="">
         Gal & Jonathan
     </p>
     <p style="font-family: subHeaderFont; font-size: 2.5vh; margin-top: 8px; margin-bottom: 0px;">
@@ -175,7 +176,24 @@ height: -webkit-fill-available;">
   width: 100%;
 }
 
+.title{
+  font-size: 4.5vh;
+   font-family: titleFont;
+    margin-bottom: 0px;
+}
+
 @media (orientation: landscape) {
+  .bgImg2{
+    visibility: hidden;
+  }
+  .bgImg1{
+    left: 20vw;
+    bottom: -35vh;
+    top: unset;
+  }
+  .title{
+  font-size: 4.5vw;
+}
   .mainPage{
     flex-direction: row;
   }
@@ -189,6 +207,7 @@ height: -webkit-fill-available;">
 
   .containerBtn {
     flex-grow: 1;
+    flex-direction: row;
   }
 
   .buttonC{

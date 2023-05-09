@@ -34,7 +34,7 @@ overflow: hidden;">
       <p class="title" style="">
         Gal & Jonathan
     </p>
-    <p style="font-family: subHeaderFont; font-size: 2.5vh; margin-top: 8px; margin-bottom: 0px;">
+    <p  class="subTitle" style="">
       Our Wedding
     </p>
     </div>
@@ -112,6 +112,13 @@ overflow: hidden;">
 .modalShow{
   visibility: visible;
 }
+
+.subTitle{
+  font-family: subHeaderFont;
+  font-size: 2.5vh;
+  margin-top: 8px;
+  margin-bottom: 0px;
+}
 .bgImg1 {
   position: absolute;
     top: 15vh;
@@ -183,13 +190,21 @@ overflow: hidden;">
 }
 
 @media (orientation: landscape) {
+  .subTitle {
+  font-size: 2vw;
+  }
+  .icon{
+    width: 12vh;
+  }
+  .rowContent{
+    font-size: 3vw;
+  }
   .bgImg2{
     visibility: hidden;
   }
   .bgImg1{
     left: 20vw;
-    bottom: -35vh;
-    top: unset;
+    top: 200px;
   }
   .title{
   font-size: 4.5vw;

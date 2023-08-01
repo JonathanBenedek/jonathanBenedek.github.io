@@ -9,6 +9,11 @@
   const goodToKnowBody = 'כדאי לדעת';
   const whatToBringHeader = 'מה להביא';
   const whatToBringBody = ['תיק', 'כובע'];
+  const HowToGetThereHeader = 'איך להגיע';
+
+  const HowToGetThereBody = {
+      details: 'האירוע נמצא במצוקי דרגות. אנו ממליצים להגיע בדרך הארוכה דרך ערד, ולהמנע מנסיעה מצומת אלמוג',
+        methods: [{icon: 'assets/waze.png', link: 'https://waze.com/ul/hsv95tquwu'}]};
 
 
   const bodyTimling = [{time: '12:00', content: 'קבלת פנים'},
@@ -34,9 +39,34 @@ function onClick(contentObj){
             renderGoodToKnow(contentObj);
         } else if (type == register){
             renderRegister(contentObj);
+        } else if (type == HowToGetThereHeader){
+            renderHowToGetThere(contentObj);
         }
   const modal =  window.document.getElementById('modal');
   modal.style.visibility = 'visible';
+}
+
+function renderHowToGetThere(contentObj){
+    const {body, header } = contentObj;
+    const { details, methods} = body
+    const modalBodyElement = window.document.getElementById('modalBody');
+    const nodeHeader = document.createTextNode(details);
+    modalBodyElement.appendChild(nodeHeader);
+
+    methods.forEach((method)=>{
+        const row = window.document.createElement('div');
+        row.className = 'row';
+
+        const aContent = window.document.createElement('a');
+        aContent.className = 'contentRow';
+        aContent.href = method.link;
+        const img = document.createElement('img');
+        img.src = method.icon;
+        img.className = 'howToGetThereIconMethod';
+        aContent.appendChild(img);
+        row.appendChild(aContent);
+        modalBodyElement.appendChild(row);
+    })
 }
 
 function renderRegister(){
@@ -136,10 +166,11 @@ overflow: hidden;">
     <p> מה להביא </p>
     <img src="assets/bagIcon2.png" class="icon">
    </div>
-  <div onclick="" class="rowContent">
-    <a style=" text-decoration: none;
-    color: black;" href="https://waze.com/ul/hsv95tquwu">איך להגיע</a>     <img src="assets/diractionIcon.png" class="icon">
-  </div>
+      <div onclick="onClick({type: HowToGetThereHeader, header: HowToGetThereHeader, body: HowToGetThereBody})" class="rowContent">
+      <p style=""> איך להגיע?  </p>
+          <img src="assets/diractionIcon.png" class="icon">
+
+      </div>
   <div onclick="onClick({header: goodToKnowHeader, body: goodToKnowBody})" class="rowContent">
     <p style="">  כדאי לדעת  </p>
     <img src="assets/tipsIcon2.png" class="icon">
@@ -237,6 +268,7 @@ overflow: hidden;">
 
 .modalBody {
     padding: 100px;
+    font-family: 'bodyFont';
 }
 .modalHeader {
     font-size: 2em;
@@ -248,6 +280,10 @@ overflow: hidden;">
     flex-direction: column;
 }
 
+
+.howToGetThereIconMethod{
+    width: 7vh;
+}
 .modal{
   font-family: sans-serif;
   height: 96vh;

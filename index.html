@@ -1,0 +1,236 @@
+<html>
+  <head>
+    <title>Gal & Jonathan</title>
+<script>
+  const whatToDoContentMsg = 'תביאו את זה ואת זה תודה';
+  const whatToTimling = 'לוזזזזז';
+  const whatToBring = 'מה להביא'
+function onClick(bodyContent){
+  const modalBodyElement = window.document.getElementById('modalBody');
+  const node = document.createTextNode(bodyContent);
+  modalBodyElement.appendChild(node);
+  const modal =  window.document.getElementById('modal');
+  modal.style.visibility = 'visible';
+}
+function closeModal(){
+  const modalBodyElement = window.document.getElementById('modalBody');
+  modalBodyElement.innerHTML = '';
+  modal.style.visibility = 'hidden';
+}
+</script>
+  </head>
+ <body style="margin: 0;
+ display: flex;
+ flex-direction: column;
+height: -webkit-fill-available;
+overflow: hidden;">
+ <div class="mainPage">
+  <div style="">
+    <img class="ourImg" src="weImage.png">
+    
+  </div>
+  <div class="containerBtn" id="cntBtn">
+    <div class="header">
+      <p class="title" style="">
+        Gal & Jonathan
+    </p>
+    <p  class="subTitle" style="">
+      Our Wedding
+    </p>
+    </div>
+<div class="bodyHomePage">
+
+  <div onclick="onClick(whatToTimling)" class="rowContent">
+    <p>   מה בלוז </p>
+    <img src="calenderIcon2.png" class="icon">
+  </div>
+  <div onclick="onClick(whatToBring)" class="rowContent">
+    <p> מה להביא </p>
+    <img src="bagIcon2.png" class="icon">
+   </div>
+  <div onclick="" class="rowContent">
+    <a style=" text-decoration: none;
+    color: black;" href="https://waze.com/ul/hsv95tquwu">איך להגיע</a>     <img src="diractionIcon.png" class="icon">
+  </div>
+  <div class="rowContent">
+    <p style="">  כדאי לדעת  </p>
+    <img src="tipsIcon2.png" class="icon">
+  </div>
+
+</div>
+
+  </div>
+ </div>
+ <img src="bgImage.png" class="bgImg1">
+ <img src="bgImgRghit.png" class="bgImg2">
+ </div>
+<!-- <div>
+    Gal & Jonathan
+ </div> !-->
+
+<div id="modal" class="modal modalHidden">
+  <div style="margin: 20px;">
+    <div onclick="closeModal()">
+      X
+    </div>
+    <a id="modalBody"></a>
+  </div>
+
+</div>
+
+
+</body>
+
+<style>
+    @font-face {
+    font-family: titleFont;
+    src: url(Parisienne-Regular.ttf);
+  }
+    @font-face {
+      font-family: bodyFont;
+      src: url(DanaYadAlefAlefAlef-Normal.otf);
+    }
+    @font-face {
+      font-family: subHeaderFont;
+      src: url(Newake-Font-Demo.otf);
+    }
+  .bodyHomePage{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .header{
+    text-align: center;
+    font-size: 38px;
+  }
+
+  .mainPage{
+    display: flex;
+    flex-direction: column;
+  }
+
+.modalShow{
+  visibility: visible;
+}
+
+.subTitle{
+  font-family: subHeaderFont;
+  font-size: 2.5vh;
+  margin-top: 8px;
+  margin-bottom: 0px;
+}
+.bgImg1 {
+  position: absolute;
+    top: 15vh;
+    width: 45vw;
+    z-index: -1;
+    left: -10vw;
+}
+    .bgImg2 {
+        position: absolute;
+        bottom: 25vh;
+        width: 40vw;
+        z-index: -1;
+        right: 0px;
+    }
+.icon{
+  width: 10vh;
+  margin: 22px;
+}
+.modal{
+  font-family: sans-serif;
+  height: 96vh;
+    width: 96vw;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #223344;
+    z-index: 1;
+    box-shadow: 10px 10px 10px gray;
+    margin: 2%;
+    opacity: 95%;
+    border-radius: 16px;
+    font-size: 50px;
+    color: white;
+    text-align: end;
+
+}
+
+.rowContent{
+  align-items: center;
+  font-size: 4vh;
+  display: flex;
+  flex-direction: row;
+  font-family: bodyFont;
+}
+
+.modalHidden{
+  visibility: hidden;
+}
+
+
+.containerBtn{
+     display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.ourImg{
+  z-index: -1;
+  object-fit: cover;
+  max-height: 20vh;
+  width: 100%;
+}
+
+.title{
+  font-size: 4.5vh;
+   font-family: titleFont;
+    margin-bottom: 0px;
+}
+
+@media (orientation: landscape) {
+  .subTitle {
+  font-size: 2vw;
+  }
+  .icon{
+    width: 12vh;
+  }
+  .rowContent{
+    font-size: 3vw;
+  }
+  .bgImg2{
+    visibility: hidden;
+  }
+  .bgImg1{
+    left: 20vw;
+    top: 200px;
+  }
+  .title{
+  font-size: 4.5vw;
+}
+  .mainPage{
+    height: 100%;
+    flex-direction: row;
+  }
+  .ourImg {
+    content:url('./ourImgLandscape.png');
+    object-fit: contain;
+    max-height: 100%;
+    /* width: 100%; */
+    max-width: 800px;
+  }
+
+  .containerBtn {
+    flex-grow: 1;
+    flex-direction: row;
+  }
+
+  .buttonC{
+    height: 25%;
+
+  }
+}
+
+</style>
+</html>

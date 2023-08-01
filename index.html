@@ -4,18 +4,102 @@
 <script>
   const whatToDoContentMsg = 'תביאו את זה ואת זה תודה';
   const whatToTimling = 'לוזזזזז';
-  const whatToBring = 'מה להביא'
-function onClick(bodyContent){
-  const modalBodyElement = window.document.getElementById('modalBody');
-  const node = document.createTextNode(bodyContent);
-  modalBodyElement.appendChild(node);
+  const register = 'הרשמה';
+  const goodToKnowHeader = 'כדאי לדעת';
+  const goodToKnowBody = 'כדאי לדעת';
+  const whatToBringHeader = 'מה להביא';
+  const whatToBringBody = ['תיק', 'כובע'];
+
+
+  const bodyTimling = [{time: '12:00', content: 'קבלת פנים'},
+      {time: '13:00', content: 'ארוחת צהריים | שכשוכיות | יין'},
+      {time: '15:00', content: 'זמן חופשי | צ׳ק אין חושות'},
+      {time: '16:00', content: 'התכנסות לטקס'},
+      {time: '16:30', content: 'טקס'},
+      {time: '17:00', content: 'ריקודים'},
+      {time: '19:00', content: 'אוכל'},
+      {time: '20:00', content: 'אטפר פארטי | מדורה'},
+
+
+
+
+  ];
+function onClick(contentObj){
+      const {type} = contentObj
+        if (type == whatToBringHeader){
+            renderWhatToBring(contentObj);
+        } else if (type == whatToTimling){
+            renderTimeLine(contentObj);
+        } else if (type == goodToKnowHeader){
+            renderGoodToKnow(contentObj);
+        } else if (type == register){
+            renderRegister(contentObj);
+        }
   const modal =  window.document.getElementById('modal');
   modal.style.visibility = 'visible';
 }
+
+function renderRegister(){
+
+}
+
+function renderGoodToKnow(){
+
+}
+
+function renderWhatToBring(contentObj){
+    const {header, body } = contentObj;
+    const modalHeaderElement = window.document.getElementById('modalHeader');
+    const nodeHeader = document.createTextNode(header);
+    modalHeaderElement.appendChild(nodeHeader);
+
+    body.forEach((whatToBring)=>{
+        const row = window.document.createElement('div');
+        row.className = 'row';
+
+        const divContent = window.document.createElement('div');
+        divContent.className = 'contentRow';
+        const nodeContent = document.createTextNode(whatToBring);
+        divContent.appendChild(nodeContent);
+        row.appendChild(divContent);
+
+        const modalBodyElement = window.document.getElementById('modalBody');
+        modalBodyElement.appendChild(row);
+    })
+}
+
+function renderTimeLine(contentObj){
+    const {header, body } = contentObj;
+    const modalHeaderElement = window.document.getElementById('modalHeader');
+    const nodeHeader = document.createTextNode(header);
+    modalHeaderElement.appendChild(nodeHeader);
+    body.forEach((whatToDo)=>{
+        const {time, content} = whatToDo;
+        const row = window.document.createElement('div');
+        row.className = 'row';
+
+        const divContent = window.document.createElement('div');
+        divContent.className = 'contentRow';
+        const nodeContent = document.createTextNode(content);
+        divContent.appendChild(nodeContent);
+        row.appendChild(divContent);
+
+        const divTime = window.document.createElement('div');
+        const nodeTime = document.createTextNode(time);
+        divTime.appendChild(nodeTime);
+        row.appendChild(divTime);
+
+        const modalBodyElement = window.document.getElementById('modalBody');
+        modalBodyElement.appendChild(row);
+    })
+}
 function closeModal(){
-  const modalBodyElement = window.document.getElementById('modalBody');
-  modalBodyElement.innerHTML = '';
-  modal.style.visibility = 'hidden';
+  const modalHeaderElement = window.document.getElementById('modalHeader');
+    const modalBodyElement = window.document.getElementById('modalBody');
+
+    modalHeaderElement.innerText = '';
+    modalBodyElement.innerHTML = '';
+    modal.style.visibility = 'hidden';
 }
 </script>
   </head>
@@ -26,7 +110,7 @@ height: -webkit-fill-available;
 overflow: hidden;">
  <div class="mainPage">
   <div style="">
-    <img class="ourImg" src="weImage.png">
+    <img class="ourImg" src="assets/weImage.png">
     
   </div>
   <div class="containerBtn" id="cntBtn">
@@ -39,30 +123,33 @@ overflow: hidden;">
     </p>
     </div>
 <div class="bodyHomePage">
-
-  <div onclick="onClick(whatToTimling)" class="rowContent">
+    <div onclick="onClick({type: register,  header: whatToTimling, body: bodyTimling})" class="rowContent">
+        <p>  הרשמה </p>
+        <img src="assets/calenderIcon2.png" class="icon">
+    </div>
+  <div onclick="onClick({type: whatToTimling,  header: whatToTimling, body: bodyTimling})" class="rowContent">
     <p>   מה בלוז </p>
-    <img src="calenderIcon2.png" class="icon">
+    <img src="assets/calenderIcon2.png" class="icon">
   </div>
-  <div onclick="onClick(whatToBring)" class="rowContent">
+  <div onclick="onClick({type: whatToBringHeader, header: whatToBringHeader, body: whatToBringBody})" class="rowContent">
     <p> מה להביא </p>
-    <img src="bagIcon2.png" class="icon">
+    <img src="assets/bagIcon2.png" class="icon">
    </div>
   <div onclick="" class="rowContent">
     <a style=" text-decoration: none;
-    color: black;" href="https://waze.com/ul/hsv95tquwu">איך להגיע</a>     <img src="diractionIcon.png" class="icon">
+    color: black;" href="https://waze.com/ul/hsv95tquwu">איך להגיע</a>     <img src="assets/diractionIcon.png" class="icon">
   </div>
-  <div class="rowContent">
+  <div onclick="onClick({header: goodToKnowHeader, body: goodToKnowBody})" class="rowContent">
     <p style="">  כדאי לדעת  </p>
-    <img src="tipsIcon2.png" class="icon">
+    <img src="assets/tipsIcon2.png" class="icon">
   </div>
 
 </div>
 
   </div>
  </div>
- <img src="bgImage.png" class="bgImg1">
- <img src="bgImgRghit.png" class="bgImg2">
+ <img src="assets/bgImage.png" class="bgImg1">
+ <img src="assets/bgImgRghit.png" class="bgImg2">
  </div>
 <!-- <div>
     Gal & Jonathan
@@ -70,12 +157,16 @@ overflow: hidden;">
 
 <div id="modal" class="modal modalHidden">
   <div style="margin: 20px;">
-    <div onclick="closeModal()">
-      X
-    </div>
-    <a id="modalBody"></a>
+      <div class="navigation">
+          <div onclick="closeModal()">
+              X
+          </div>
+      </div>
+        <div id="content" class="content">
+            <a class="modalHeader" id="modalHeader"></a>
+            <a class="modalBody" id="modalBody"></a>
+        </div>
   </div>
-
 </div>
 
 
@@ -84,15 +175,15 @@ overflow: hidden;">
 <style>
     @font-face {
     font-family: titleFont;
-    src: url(Parisienne-Regular.ttf);
+    src: url(fonts/Parisienne-Regular.ttf);
   }
     @font-face {
       font-family: bodyFont;
-      src: url(DanaYadAlefAlefAlef-Normal.otf);
+      src: url(fonts/DanaYadAlefAlefAlef-Normal.otf);
     }
     @font-face {
       font-family: subHeaderFont;
-      src: url(Newake-Font-Demo.otf);
+      src: url(fonts/Newake-Font-Demo.otf);
     }
   .bodyHomePage{
     display: flex;
@@ -119,6 +210,11 @@ overflow: hidden;">
   margin-top: 8px;
   margin-bottom: 0px;
 }
+
+.contentRow{
+    flex-grow: 1;
+    padding-right: 80px;
+}
 .bgImg1 {
   position: absolute;
     top: 15vh;
@@ -134,9 +230,23 @@ overflow: hidden;">
         right: 0px;
     }
 .icon{
-  width: 10vh;
+  width: 6vh;
   margin: 22px;
 }
+
+.modalBody {
+    padding: 100px;
+}
+.modalHeader {
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
 .modal{
   font-family: sans-serif;
   height: 96vh;
@@ -163,6 +273,13 @@ overflow: hidden;">
   flex-direction: row;
   font-family: bodyFont;
 }
+
+.row{
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-around;
+}
+
 
 .modalHidden{
   visibility: hidden;
@@ -214,7 +331,7 @@ overflow: hidden;">
     flex-direction: row;
   }
   .ourImg {
-    content:url('./ourImgLandscape.png');
+    content:url('assets/ourImgLandscape.png');
     object-fit: contain;
     max-height: 100%;
     /* width: 100%; */

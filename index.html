@@ -152,28 +152,27 @@ overflow: hidden;">
       Our Wedding
     </p>
     </div>
-<div class="bodyHomePage">
-    <div onclick="" class="rowContent">
-        <a style=" text-decoration: none;
+      <div onclick="" class="registerButton">
+          <a style=" text-decoration: none;
     color: black;" href="https://docs.google.com/forms/d/e/1FAIpQLSefp_wpp0kbicTDetfhrh30ZP4l6WSc64-idEx5_YDRUzC52Q/viewform?usp=sf_link"> הרשמה</a>
-        <img src="assets/calenderIcon2.png" class="icon">
-    </div>
-  <div onclick="onClick({type: whatToTimling,  header: whatToTimling, body: bodyTimling})" class="rowContent">
-    <p>   מה בלוז </p>
-    <img src="assets/calenderIcon2.png" class="icon">
+      </div>
+<div class="bodyHomePage">
+  <div style="margin-left: 8vw;margin-bottom: 7vw;" onclick="onClick({type: whatToTimling,  header: whatToTimling, body: bodyTimling})" class="rowContent">
+    <p style="margin: 0">   מה בלוז </p>
+    <img src="assets/8 (2).png" class="icon">
   </div>
-  <div onclick="onClick({type: whatToBringHeader, header: whatToBringHeader, body: whatToBringBody})" class="rowContent">
-    <p> מה להביא </p>
-    <img src="assets/bagIcon2.png" class="icon">
+  <div style="margin-right: 8vw; margin-bottom: 7vw" onclick="onClick({type: whatToBringHeader, header: whatToBringHeader, body: whatToBringBody})" class="rowContent">
+      <p style="margin: 0"> מה להביא </p>
+    <img src="assets/9 (2).png" class="icon">
    </div>
-      <div onclick="onClick({type: HowToGetThereHeader, header: HowToGetThereHeader, body: HowToGetThereBody})" class="rowContent">
-      <p style=""> איך להגיע?  </p>
-          <img src="assets/diractionIcon.png" class="icon">
+      <div style="margin-left: 8vw" onclick="onClick({type: HowToGetThereHeader, header: HowToGetThereHeader, body: HowToGetThereBody})" class="rowContent">
+          <p style="margin: 0"> איך להגיע?  </p>
+          <img src="assets/10 (2).png" class="icon">
 
       </div>
-  <div onclick="onClick({header: goodToKnowHeader, body: goodToKnowBody})" class="rowContent">
-    <p style="">  כדאי לדעת  </p>
-    <img src="assets/tipsIcon2.png" class="icon">
+  <div style="margin-right: 8vw" onclick="onClick({header: goodToKnowHeader, body: goodToKnowBody})" class="rowContent">
+      <p style="margin: 0">  כדאי לדעת  </p>
+    <img src="assets/11 (2).png" class="icon">
   </div>
 
 </div>
@@ -219,8 +218,8 @@ overflow: hidden;">
     }
   .bodyHomePage{
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+      flex-wrap: wrap;
+      justify-content: space-around;
   }
   .header{
     text-align: center;
@@ -247,6 +246,20 @@ overflow: hidden;">
     flex-grow: 1;
     padding-right: 80px;
 }
+.registerButton{
+    justify-content: center;
+    min-width: 30vw;
+    align-items: center;
+    font-size: 4vh;
+    display: flex;
+    flex-direction: row;
+    font-family: bodyFont;
+    margin-top: 5vh;
+    margin-bottom: 6vh;
+    border-style: dashed;
+    border-radius: 20px;
+    padding: 20px;
+}
 .bgImg1 {
   position: absolute;
     top: 15vh;
@@ -262,8 +275,13 @@ overflow: hidden;">
         right: 0px;
     }
 .icon{
-  width: 6vh;
-  margin: 22px;
+    margin-top: 2vh;
+    width: 10vh;
+}
+
+.registerIcon{
+    width: 6vh;
+    margin-left: 3vw;
 }
 
 .modalBody {
@@ -304,11 +322,18 @@ overflow: hidden;">
 }
 
 .rowContent{
-  align-items: center;
-  font-size: 4vh;
-  display: flex;
-  flex-direction: row;
-  font-family: bodyFont;
+    justify-content: center;
+    margin: 12px;
+    min-width: 35vw;
+    min-height: 35vw;
+    border-style: dashed;
+    align-items: center;
+    font-size: 8vw;
+    display: flex;
+    flex-direction: row;
+    font-family: bodyFont;
+    border-radius: 20px;
+    flex-direction: column;
 }
 
 .row{

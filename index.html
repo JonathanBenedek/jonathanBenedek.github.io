@@ -171,20 +171,20 @@ overflow: hidden;">
     color: black;" href="https://docs.google.com/forms/d/e/1FAIpQLSefp_wpp0kbicTDetfhrh30ZP4l6WSc64-idEx5_YDRUzC52Q/viewform?usp=sf_link"> הרשמה</a>
       </div>
 <div class="bodyHomePage">
-  <div style="margin-left: 8vw;margin-bottom: 7vw;" onclick="onClick({type: whatToTimling,  header: whatToTimling, body: bodyTimling})" class="rowContent">
+  <div style="" onclick="onClick({type: whatToTimling,  header: whatToTimling, body: bodyTimling})" class="rowContent">
     <p style="margin: 0">   מה בלוז </p>
     <img src="assets/8 (2).png" class="icon">
   </div>
-  <div style="margin-right: 8vw; margin-bottom: 7vw" onclick="onClick({type: whatToBringHeader, header: whatToBringHeader, body: whatToBringBody})" class="rowContent">
+  <div style="" onclick="onClick({type: whatToBringHeader, header: whatToBringHeader, body: whatToBringBody})" class="rowContent">
       <p style="margin: 0"> מה להביא </p>
     <img src="assets/9 (2).png" class="icon">
    </div>
-      <div style="margin-left: 8vw" onclick="onClick({type: HowToGetThereHeader, header: HowToGetThereHeader, body: HowToGetThereBody})" class="rowContent">
+      <div style="" onclick="onClick({type: HowToGetThereHeader, header: HowToGetThereHeader, body: HowToGetThereBody})" class="rowContent">
           <p style="margin: 0"> איך להגיע</p>
           <img src="assets/10 (2).png" class="icon">
 
       </div>
-  <div style="margin-right: 8vw" onclick="onClick({header: goodToKnowHeader, body: goodToKnowBody})" class="rowContent">
+  <div style="" onclick="onClick({header: goodToKnowHeader, body: goodToKnowBody})" class="rowContent">
       <p style="margin: 0">  כדאי לדעת  </p>
     <img src="assets/11 (2).png" class="icon">
   </div>
@@ -233,7 +233,7 @@ overflow: hidden;">
   .bodyHomePage{
     display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
+      justify-content: space-evenly;
   }
 
   .header{
@@ -394,6 +394,9 @@ overflow: hidden;">
 }
 
 @media (orientation: landscape) {
+    .registerButton{
+        min-width: 30vw;
+    }
   .subTitle {
   font-size: 2vw;
   }
@@ -402,6 +405,8 @@ overflow: hidden;">
   }
   .rowContent{
     font-size: 3vw;
+      min-width: 10vw;
+      min-height: 10vw;
   }
   .bgImg2{
     visibility: hidden;
@@ -418,6 +423,7 @@ overflow: hidden;">
     flex-direction: row;
   }
   .ourImg {
+      display: none;
     content:url('assets/ourImgLandscape.png');
     object-fit: contain;
     max-height: 100%;
@@ -427,7 +433,6 @@ overflow: hidden;">
 
   .containerBtn {
     flex-grow: 1;
-    flex-direction: row;
   }
 
   .buttonC{

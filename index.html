@@ -13,7 +13,9 @@
 
   const HowToGetThereBody = {
       details: 'האירוע נמצא במצוקי דרגות. אנו ממליצים להגיע בדרך הארוכה דרך ערד, ולהמנע מנסיעה מצומת אלמוג',
-        methods: [{icon: 'assets/waze.png', link: 'https://waze.com/ul/hsv95tquwu'}]};
+        methods: [{icon: 'assets/waze.png', link: 'https://waze.com/ul/hsv95tquwu'},
+            {icon: 'assets/maps.png', link: 'https://goo.gl/maps/tf8dZeZsyob53AMk9'},
+        ]}
 
 
   const bodyTimling = [{time: '12:00', content: 'קבלת פנים'},
@@ -52,21 +54,33 @@ function renderHowToGetThere(contentObj){
     const modalBodyElement = window.document.getElementById('modalBody');
     const nodeHeader = document.createTextNode(details);
     modalBodyElement.appendChild(nodeHeader);
-
+    const rowsContainer = window.document.createElement('div');
+    rowsContainer.className = 'rowsContainer';
     methods.forEach((method)=>{
         const row = window.document.createElement('div');
-        row.className = 'row';
+        row.className = 'rowGetThere row';
 
         const aContent = window.document.createElement('a');
-        aContent.className = 'contentRow';
         aContent.href = method.link;
         const img = document.createElement('img');
         img.src = method.icon;
         img.className = 'howToGetThereIconMethod';
         aContent.appendChild(img);
         row.appendChild(aContent);
-        modalBodyElement.appendChild(row);
+        rowsContainer.appendChild(row);
     })
+    rowsContainer.appendChild(createImgLocation());
+    modalBodyElement.appendChild(rowsContainer);
+}
+
+function createImgLocation(){
+    const container = window.document.createElement('div');
+    container.className = 'locationContainer';
+    const img = document.createElement('img');
+    img.src = 'assets/mezoki.png';
+    img.className = 'imgLocation';
+    container.appendChild(img);
+    return container;
 }
 
 function renderRegister(){
@@ -166,7 +180,7 @@ overflow: hidden;">
     <img src="assets/9 (2).png" class="icon">
    </div>
       <div style="margin-left: 8vw" onclick="onClick({type: HowToGetThereHeader, header: HowToGetThereHeader, body: HowToGetThereBody})" class="rowContent">
-          <p style="margin: 0"> איך להגיע?  </p>
+          <p style="margin: 0"> איך להגיע</p>
           <img src="assets/10 (2).png" class="icon">
 
       </div>
@@ -221,6 +235,7 @@ overflow: hidden;">
       flex-wrap: wrap;
       justify-content: space-around;
   }
+
   .header{
     text-align: center;
     font-size: 38px;
@@ -248,7 +263,7 @@ overflow: hidden;">
 }
 .registerButton{
     justify-content: center;
-    min-width: 30vw;
+    min-width: 50vw;
     align-items: center;
     font-size: 4vh;
     display: flex;
@@ -282,6 +297,10 @@ overflow: hidden;">
 .registerIcon{
     width: 6vh;
     margin-left: 3vw;
+}
+
+.rowsContainer{
+    margin-top: 20vh;
 }
 
 .modalBody {
@@ -320,7 +339,13 @@ overflow: hidden;">
     text-align: end;
 
 }
-
+.locationContainer{
+    display: flex;
+    justify-content: center;
+}
+.imgLocation{
+    max-width: 70vw;
+}
 .rowContent{
     justify-content: center;
     margin: 12px;
@@ -410,6 +435,8 @@ overflow: hidden;">
 
   }
 }
-
+    .rowGetThere{
+        margin: 100px;
+    }
 </style>
 </html>

@@ -163,7 +163,7 @@ overflow: hidden;">
         Gal & Jonathan
     </p>
     <p  class="subTitle" style="">
-      Our Wedding
+      Our Wedding - 20.10.23
     </p>
     </div>
       <div onclick="" class="registerButton">
@@ -203,7 +203,7 @@ overflow: hidden;">
 <div id="modal" class="modal modalHidden">
   <div style="margin: 20px;">
       <div class="navigation">
-          <div onclick="closeModal()">
+          <div style="font-size: 20px; margin-bottom: 2px" onclick="closeModal()">
               X
           </div>
       </div>
@@ -305,7 +305,6 @@ overflow: hidden;">
 }
 
 .modalBody {
-    padding: 100px;
     font-family: 'bodyFont';
 }
 .modalHeader {
@@ -314,6 +313,7 @@ overflow: hidden;">
     justify-content: center;
 }
 .content {
+    font-size: 5vw;
     display: flex;
     flex-direction: column;
 }
@@ -363,7 +363,7 @@ overflow: hidden;">
 }
 
 .row{
-    margin-top: 60px;
+    margin-top: 20px;
     display: flex;
     justify-content: space-around;
 }
@@ -436,12 +436,20 @@ overflow: hidden;">
   .containerBtn {
     flex-grow: 1;
   }
+  .navigation{
+      display: flex;
+      flex-direction: column-reverse;
+  }
 
   .buttonC{
     height: 25%;
 
   }
 }
+    .navigation{
+        display: flex;
+        flex-direction: row-reverse;
+    }
     .rowGetThere{
         margin: 100px;
     }

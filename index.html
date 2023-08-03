@@ -168,7 +168,7 @@ overflow: hidden;">
     </div>
       <div onclick="" class="registerButton">
           <a style=" text-decoration: none;
-    color: black;" href="https://docs.google.com/forms/d/e/1FAIpQLSefp_wpp0kbicTDetfhrh30ZP4l6WSc64-idEx5_YDRUzC52Q/viewform?usp=sf_link"> הרשמה</a>
+    color: black;" href="https://docs.google.com/forms/d/e/1FAIpQLSefp_wpp0kbicTDetfhrh30ZP4l6WSc64-idEx5_YDRUzC52Q/viewform?usp=sf_link"> אישור הגעה</a>
       </div>
 <div class="bodyHomePage">
   <div style="" onclick="onClick({type: whatToTimling,  header: whatToTimling, body: bodyTimling})" class="rowContent">
@@ -188,6 +188,9 @@ overflow: hidden;">
       <p style="margin: 0">  כדאי לדעת  </p>
     <img src="assets/11 (2).png" class="icon">
   </div>
+    <div class="snoopy">
+        <img src="assets/snopy.png" class="snoopyImg">
+    </div>
 
 </div>
 
@@ -294,6 +297,13 @@ overflow: hidden;">
     margin-top: 0vh;
     width: 10vh;
 }
+.snoopyImg{
+    position: absolute;
+    bottom: 0vh;
+    width: 40vw;
+    z-index: -1;
+    left: 0;
+}
 
 .registerIcon{
     width: 6vh;
@@ -396,6 +406,11 @@ overflow: hidden;">
 }
 
 @media (orientation: landscape) {
+    .snoopyImg{
+        right: 0;
+        left: unset;
+        width: 30vh;
+    }
     .registerButton{
         min-width: 30vw;
     }

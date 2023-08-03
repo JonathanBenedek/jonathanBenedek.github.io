@@ -1,5 +1,6 @@
 <html>
   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gal & Jonathan</title>
 <script>
   const whatToDoContentMsg = 'תביאו את זה ואת זה תודה';
@@ -233,12 +234,13 @@ overflow: hidden;">
   .bodyHomePage{
     display: flex;
       flex-wrap: wrap;
-      justify-content: space-evenly;
+      justify-content: center;
   }
 
   .header{
     text-align: center;
     font-size: 38px;
+    margin-bottom: 6vh;
   }
 
   .mainPage{
@@ -263,17 +265,17 @@ overflow: hidden;">
 }
 .registerButton{
     justify-content: center;
-    min-width: 50vw;
+    min-width: 60vw;
     align-items: center;
     font-size: 4vh;
     display: flex;
     flex-direction: row;
     font-family: bodyFont;
-    margin-top: 5vh;
-    margin-bottom: 6vh;
-    border-style: dashed;
+    margin-top: 0vh;
+    margin-bottom: 0vh;
+    border-style: groove;
     border-radius: 20px;
-    padding: 20px;
+    padding: 4px;
 }
 .bgImg1 {
   position: absolute;
@@ -290,7 +292,7 @@ overflow: hidden;">
         right: 0px;
     }
 .icon{
-    margin-top: 2vh;
+    margin-top: 0vh;
     width: 10vh;
 }
 
@@ -348,10 +350,10 @@ overflow: hidden;">
 }
 .rowContent{
     justify-content: center;
-    margin: 12px;
+    margin: 8px;
     min-width: 35vw;
     min-height: 35vw;
-    border-style: dashed;
+    border-style: groove;
     align-items: center;
     font-size: 8vw;
     display: flex;
@@ -384,7 +386,8 @@ overflow: hidden;">
   z-index: -1;
   object-fit: cover;
   max-height: 20vh;
-  width: 100%;
+  /*width: 100%;*/
+    min-height: 200px;
 }
 
 .title{

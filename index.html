@@ -70,16 +70,19 @@ function renderHowToGetThere(contentObj){
         row.appendChild(aContent);
         rowsContainer.appendChild(row);
     })
-    rowsContainer.appendChild(createImgLocation());
+    rowsContainer.appendChild(createLocation());
     modalBodyElement.appendChild(rowsContainer);
 }
 
-function createImgLocation(){
+function createLocation(){
     const container = window.document.createElement('div');
+    const description = window.document.createElement('div');
+    description.innerText = 'הקוד בשער הכניסה הוא... לאחר שעברתם את השער החשמלי של הכפר, עליכם לקחת את הכביש השמאלי, ולעקוב אחר המפה המצורפת:'
     container.className = 'locationContainer';
     const img = document.createElement('img');
-    img.src = 'assets/mezoki.png';
+    img.src = 'assets/mezokiMap.png';
     img.className = 'imgLocation';
+    container.appendChild(description);
     container.appendChild(img);
     return container;
 }
@@ -311,7 +314,7 @@ overflow: hidden;">
 }
 
 .rowsContainer{
-    margin-top: 20vh;
+    margin-top: 10vh;
 }
 
 .modalBody {
@@ -353,9 +356,10 @@ overflow: hidden;">
 .locationContainer{
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 .imgLocation{
-    max-width: 70vw;
+    max-width: 96vw;
 }
 .rowContent{
     justify-content: center;
@@ -471,7 +475,7 @@ overflow: hidden;">
         flex-direction: row-reverse;
     }
     .rowGetThere{
-        margin: 100px;
+        margin: 16px;
     }
 </style>
 </html>

@@ -13,7 +13,7 @@
   const HowToGetThereHeader = 'איך להגיע';
 
   const HowToGetThereBody = {
-      details: 'האירוע נמצא במצוקי דרגות. אנו ממליצים להגיע בדרך הארוכה דרך ערד, ולהמנע מנסיעה מצומת אלמוג',
+      details: 'החתונה מתקיימת בכפר המטיילים מצוקי דרגות',
         methods: [{icon: 'assets/waze.png', link: 'https://waze.com/ul/hsv95tquwu'},
             {icon: 'assets/maps.png', link: 'https://goo.gl/maps/tf8dZeZsyob53AMk9', width: 'unset', height: '7vh'},
         ]}
@@ -87,7 +87,7 @@ function renderHowToGetThere(contentObj){
 function createLocation(){
     const container = window.document.createElement('div');
     const description = window.document.createElement('div');
-    description.innerText = 'הקוד בשער הכניסה הוא... לאחר שעברתם את השער החשמלי של הכפר, עליכם לקחת את הכביש השמאלי, ולעקוב אחר המפה המצורפת:'
+    description.innerText = 'כשהגעתם לשער החשמלי של הכפר עליכם להכנס(קוד כניסה ...), להמשיך עם הכביש השמאלי, ולעקוב אחר המפה המצורפת'
     description.style = 'margin-bottom: 2vh;'
     container.className = 'locationContainer';
     const img = document.createElement('img');
@@ -295,7 +295,8 @@ overflow: hidden;">
 }
 
 .methodsContainer{
-    margin-bottom: 10vh;
+    margin-top: 1vh;
+    margin-bottom: 5vh;
     display: flex;
     justify-content: center;
 }
@@ -331,7 +332,7 @@ overflow: hidden;">
 }
 
 .rowsContainer{
-    margin-top: 10vh;
+    margin-top: 4vh;
 }
 
 .modalBody {
@@ -343,7 +344,7 @@ overflow: hidden;">
     justify-content: center;
 }
 .content {
-    font-size: 5vw;
+    font-size: 6vw;
     display: flex;
     flex-direction: column;
 }

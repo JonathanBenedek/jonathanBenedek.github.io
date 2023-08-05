@@ -15,7 +15,7 @@
   const HowToGetThereBody = {
       details: 'האירוע נמצא במצוקי דרגות. אנו ממליצים להגיע בדרך הארוכה דרך ערד, ולהמנע מנסיעה מצומת אלמוג',
         methods: [{icon: 'assets/waze.png', link: 'https://waze.com/ul/hsv95tquwu'},
-            {icon: 'assets/maps.png', link: 'https://goo.gl/maps/tf8dZeZsyob53AMk9'},
+            {icon: 'assets/maps.png', link: 'https://goo.gl/maps/tf8dZeZsyob53AMk9', width: 'unset', height: '7vh'},
         ]}
 
 
@@ -57,19 +57,29 @@ function renderHowToGetThere(contentObj){
     modalBodyElement.appendChild(nodeHeader);
     const rowsContainer = window.document.createElement('div');
     rowsContainer.className = 'rowsContainer';
+    const methodsContainer = window.document.createElement('div');
+    methodsContainer.className = 'methodsContainer';
     methods.forEach((method)=>{
         const row = window.document.createElement('div');
+
         row.className = 'rowGetThere row';
 
         const aContent = window.document.createElement('a');
         aContent.href = method.link;
         const img = document.createElement('img');
         img.src = method.icon;
+        if (method.width) {
+            img.style.width = method.width;
+        }
+        if (method.height) {
+            img.style.height = method.height;
+        }
         img.className = 'howToGetThereIconMethod';
         aContent.appendChild(img);
         row.appendChild(aContent);
-        rowsContainer.appendChild(row);
+        methodsContainer.appendChild(row);
     })
+    rowsContainer.appendChild(methodsContainer);
     rowsContainer.appendChild(createLocation());
     modalBodyElement.appendChild(rowsContainer);
 }
@@ -78,6 +88,7 @@ function createLocation(){
     const container = window.document.createElement('div');
     const description = window.document.createElement('div');
     description.innerText = 'הקוד בשער הכניסה הוא... לאחר שעברתם את השער החשמלי של הכפר, עליכם לקחת את הכביש השמאלי, ולעקוב אחר המפה המצורפת:'
+    description.style = 'margin-bottom: 2vh;'
     container.className = 'locationContainer';
     const img = document.createElement('img');
     img.src = 'assets/mezokiMap.png';
@@ -282,6 +293,12 @@ overflow: hidden;">
     border-radius: 20px;
     padding: 4px;
 }
+
+.methodsContainer{
+    margin-bottom: 10vh;
+    display: flex;
+    justify-content: center;
+}
 .bgImg1 {
   position: absolute;
     top: 15vh;
@@ -461,6 +478,7 @@ overflow: hidden;">
     flex-grow: 1;
   }
   .navigation{
+      margin-bottom: 4vh;
       display: flex;
       flex-direction: column-reverse;
   }
@@ -471,6 +489,7 @@ overflow: hidden;">
   }
 }
     .navigation{
+        margin-bottom: 4vh;
         display: flex;
         flex-direction: row-reverse;
     }

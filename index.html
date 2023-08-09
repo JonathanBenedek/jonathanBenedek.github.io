@@ -7,9 +7,9 @@
   const whatToTimling = 'לוזזזזז';
   const register = 'אישור הגעה';
   const goodToKnowHeader = 'כדאי לדעת';
-  const goodToKnowBody = 'כדאי לדעת';
+  const goodToKnowBody = [' *','*','*'];
   const whatToBringHeader = 'מה להביא';
-  const whatToBringBody = ['תיק', 'כובע'];
+  const whatToBringBody = ['אל תוש','כובע','מטען',' קרם הגנה','','בגד ים', 'מגבת', 'כפכפים למקלחת' ,':)בגדים יפים לטקס','בגדים ארוכים לערב' ,'מצעים','כלי רחצה'];
   const HowToGetThereHeader = 'איך להגיע';
 
   const HowToGetThereBody = {
@@ -19,6 +19,11 @@
         ]}
 
 
+  const bodyGoodToKnow= [{time: '*', content: 'בחושה יש אור חשמל ומזרונים. צריך להביא מצעים'},
+      {time: '*', content: 'בסמוך לאירוע נעדכן באיזה חושה אתם (2-4 בחושה)'},
+      {time: '*', content: 'לא תיהיה כספת למתנות, מוזמנים להעביר בביט או פייבוקס'},
+  ];
+
   const bodyTimling = [{time: '12:00', content: 'קבלת פנים'},
       {time: '13:00', content: 'ארוחת צהריים | שכשוכיות | יין'},
       {time: '15:00', content: 'זמן חופשי | צ׳ק אין חושות'},
@@ -27,11 +32,8 @@
       {time: '17:00', content: 'ריקודים'},
       {time: '19:00', content: 'אוכל'},
       {time: '20:00', content: 'אטפר פארטי | מדורה'},
-
-
-
-
   ];
+
 function onClick(contentObj){
       const {type} = contentObj
         if (type == whatToBringHeader){
@@ -102,9 +104,31 @@ function renderRegister(){
 
 }
 
-function renderGoodToKnow(){
+function renderGoodToKnow(contentObj){
+        const {header, body } = contentObj;
+        const modalHeaderElement = window.document.getElementById('modalHeader');
+        const nodeHeader = document.createTextNode(header);
+        modalHeaderElement.appendChild(nodeHeader);
+        body.forEach((whatToDo)=>{
+            const {time, content} = whatToDo;
+            const row = window.document.createElement('div');
+            row.className = 'row';
 
-}
+            const divContent = window.document.createElement('div');
+            divContent.className = 'contentRow goodToKnow';
+            const nodeContent = document.createTextNode(content);
+            divContent.appendChild(nodeContent);
+            row.appendChild(divContent);
+
+            const divTime = window.document.createElement('div');
+            const nodeTime = document.createTextNode(time);
+            divTime.appendChild(nodeTime);
+            row.appendChild(divTime);
+
+            const modalBodyElement = window.document.getElementById('modalBody');
+            modalBodyElement.appendChild(row);
+        })
+    }
 
 function renderWhatToBring(contentObj){
     const {header, body } = contentObj;
@@ -198,7 +222,7 @@ overflow: hidden;">
           <img src="assets/10 (2).png" class="icon">
 
       </div>
-  <div style="" onclick="onClick({header: goodToKnowHeader, body: goodToKnowBody})" class="rowContent">
+  <div style="" onclick="onClick({type: goodToKnowHeader,  header: goodToKnowHeader, body: bodyGoodToKnow})" class="rowContent">
       <p style="margin: 0">  כדאי לדעת  </p>
     <img src="assets/11 (2).png" class="icon">
   </div>
@@ -493,6 +517,9 @@ overflow: hidden;">
     }
     .rowGetThere{
         margin: 16px;
+    }
+    .goodToKnow{
+        padding-right: 20px;
     }
 </style>
 </html>

@@ -9,11 +9,11 @@
   const goodToKnowHeader = 'כדאי לדעת';
   const goodToKnowBody = [' *','*','*'];
   const whatToBringHeader = 'מה להביא';
-  const whatToBringBody = ['אל תוש','כובע','מטען',' קרם הגנה','','בגד ים', 'מגבת', 'כפכפים למקלחת' ,':)בגדים יפים לטקס','בגדים ארוכים לערב' ,'מצעים','כלי רחצה'];
+  const whatToBringBody = ['אל תוש','כובע','מטען',' קרם הגנה','בגד ים', 'מגבת', 'כפכפים למקלחת' ,':) בגדים יפים לטקס','בגדים ארוכים לערב' ,'מצעים','כלי רחצה'];
   const HowToGetThereHeader = 'איך להגיע';
 
   const HowToGetThereBody = {
-      details: 'החתונה מתקיימת בכפר המטיילים מצוקי דרגות',
+      details: 'החתונה מתקיימת בכפר המטיילים מצוקי דרגות. ישנם 2 דרכים להגיע. דרך קצרה *דרך כביש 1 מזרח ירושלים* (כשעה וחצי מהמרכז). הדרך ארוכה דרך ערד (כ3 שעות מהמרכז)',
         methods: [{icon: 'assets/waze.png', link: 'https://waze.com/ul/hsv95tquwu'},
             {icon: 'assets/maps.png', link: 'https://goo.gl/maps/tf8dZeZsyob53AMk9', width: 'unset', height: '7vh'},
         ]}
@@ -139,12 +139,17 @@ function renderWhatToBring(contentObj){
     body.forEach((whatToBring)=>{
         const row = window.document.createElement('div');
         row.className = 'row';
+        const input = window.document.createElement('input');
+        input.type = 'checkbox';
 
         const divContent = window.document.createElement('div');
         divContent.className = 'contentRow';
         const nodeContent = document.createTextNode(whatToBring);
+        input.value = whatToBring;
+        input.style = 'width: 4vw';
         divContent.appendChild(nodeContent);
         row.appendChild(divContent);
+        row.appendChild(input);
 
         const modalBodyElement = window.document.getElementById('modalBody');
         modalBodyElement.appendChild(row);
@@ -241,7 +246,7 @@ overflow: hidden;">
 <div id="modal" class="modal modalHidden">
   <div style="margin: 20px;">
       <div class="navigation">
-          <div style="font-size: 20px; margin-bottom: 2px" onclick="closeModal()">
+          <div style="font-size: 26px; margin-bottom: 2px" onclick="closeModal()">
               X
           </div>
       </div>
@@ -298,7 +303,7 @@ overflow: hidden;">
 
 .contentRow{
     flex-grow: 1;
-    padding-right: 80px;
+    padding-right: 40px;
 }
 .registerButton{
     justify-content: center;

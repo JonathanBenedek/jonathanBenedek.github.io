@@ -58,9 +58,13 @@ function onClick(contentObj){
 function renderHowToGetThere(contentObj){
     const {body, header } = contentObj;
     const { details, methods} = body
+    const modalHeaderElement = window.document.getElementById('modalHeader');
     const modalBodyElement = window.document.getElementById('modalBody');
     const nodeHeader = document.createTextNode(details);
     modalBodyElement.appendChild(nodeHeader);
+    const headerElem = window.document.createElement('div');
+    headerElem.innerText = header;
+    modalHeaderElement.appendChild(headerElem);
     const rowsContainer = window.document.createElement('div');
     rowsContainer.className = 'rowsContainer';
     const methodsContainer = window.document.createElement('div');
@@ -310,6 +314,8 @@ overflow: hidden;">
   .mainPage{
     display: flex;
     flex-direction: column;
+      max-height: 100vh;
+      overflow: auto;
   }
 
 .modalShow{
@@ -513,6 +519,8 @@ overflow: hidden;">
   .mainPage{
     height: 100%;
     flex-direction: row;
+      max-height: 100vh;
+      overflow: auto;
   }
   .ourImg {
       /*display: none;*/

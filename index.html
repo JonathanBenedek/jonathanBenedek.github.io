@@ -223,9 +223,9 @@ function closeModal(){
  flex-direction: column;
 overflow: hidden;">
  <div class="mainPage">
-  <div style="">
+  <div class= "containerOurImg" style="">
     <img class="ourImg" src="assets/weImage.png">
-    
+
   </div>
   <div class="containerBtn" id="cntBtn">
     <div class="header">
@@ -370,7 +370,7 @@ overflow: hidden;">
         width: 35vw;
         z-index: -1;
         left: -10vw;
-        opacity: 25%;
+        opacity: 35%;
     }
 .icon{
     margin-top: 0vh;
@@ -468,14 +468,18 @@ overflow: hidden;">
   visibility: hidden;
 }
 
-
+.containerOurImg{
+    display: flex;
+    justify-content: center;
+    max-height: 200px;
+    align-items: center;
+}
 
 .ourImg{
-  z-index: -1;
-  object-fit: cover;
-  max-height: 22vh;
-  width: 100vw;
-    min-height: 200px;
+    object-fit: cover;
+    max-height: 22vh;
+    width: 96vw;
+    height: 92%;
 }
 
 .title{

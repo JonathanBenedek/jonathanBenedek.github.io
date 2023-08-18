@@ -9,19 +9,21 @@
   const goodToKnowHeader = 'כדאי לדעת';
   const goodToKnowBody = [' *','*','*'];
   const whatToBringHeader = 'מה להביא';
-  const whatToBringBody = ['אל תוש','כובע','מטען',' קרם הגנה','בגד ים', 'מגבת', 'כפכפים למקלחת' ,':) בגדים יפים לטקס','בגדים ארוכים לערב' ,'מצעים','כלי רחצה'];
+  const whatToBringBody = ['אל תוש','כובע','מטען',' קרם הגנה','בגד ים', 'מגבת', 'כפכפים למקלחת' ,':) בגדים יפים לטקס','בגדים ארוכים לערב','פנס','שמיכה' ,'כרית','מצעים','כלי רחצה'];
   const HowToGetThereHeader = 'איך להגיע';
 
   const HowToGetThereBody = {
-      details: 'החתונה מתקיימת בכפר המטיילים מצוקי דרגות. ישנם 2 דרכים להגיע. דרך קצרה *דרך כביש 1 מזרח ירושלים* (כשעה וחצי מהמרכז). הדרך ארוכה דרך ערד (כ3 שעות מהמרכז)',
+      details: '',
         methods: [{icon: 'assets/waze.png', link: 'https://waze.com/ul/hsv95tquwu'},
             {icon: 'assets/maps.png', link: 'https://goo.gl/maps/tf8dZeZsyob53AMk9', width: 'unset', height: '7vh'},
         ]}
 
 
-  const bodyGoodToKnow= [{time: '*', content: 'בחושה יש אור חשמל ומזרונים. צריך להביא מצעים'},
-      {time: '*', content: 'בסמוך לאירוע נעדכן באיזה חושה אתם (2-4 בחושה)'},
-      {time: '*', content: 'לא תיהיה כספת למתנות, מוזמנים להעביר בביט או פייבוקס'},
+  const bodyGoodToKnow= [{time: '*', content: 'בחושה יש אור, שקע חשמל ומזרונים. צריך להביא מצעים, כרית ושמיכה.'},
+      {time: '*', content: 'שירותים ומקלחות משותפים ממוקמים במרכז כפר המטיילים (ראו במפה)'},
+      {time: '*', content: 'בסמוך לאירוע נעדכן באיזה חושה אתם (2-4) אנשים בחושה'},
+      {time: '*', content: 'אם יש לכם כיסאות מתקפלים נשמח שתביאו (למדורה בערב)'},
+      {time: '*', content: 'מתנות אפשר בביט או בפייבוקס (לא תיהיה כספת למתנות)'},
   ];
 
       const timeLineShihi= [
@@ -61,7 +63,27 @@ function renderHowToGetThere(contentObj){
     const modalHeaderElement = window.document.getElementById('modalHeader');
     const modalBodyElement = window.document.getElementById('modalBody');
     const nodeHeader = document.createTextNode(details);
+    const line1 = window.document.createElement('div');
+    line1.innerText = '.המקום - כפר המטיילים מצוקי דרגות';
+    const line2 = window.document.createElement('div');
+    line2.innerText = ':יש 2 דרכים להגיע';
+    line2.className = 'modalLine';
+    const line3 = window.document.createElement('div');
+    line3.innerText = 'הדרך הקצרה: דרך ירושלים | דרך צומת אלמוג | שעה וחצי מהמרכז'
+    line3.className = 'modalLine';
+    const line4 = window.document.createElement('div');
+    line4.className = 'modalLine';
+    line4.innerText = ' הדרך הארוכה: דרך ערד | כשעתיים וחצי מהמרכז'
+
+
+
     modalBodyElement.appendChild(nodeHeader);
+
+    modalBodyElement.appendChild(line1);
+    modalBodyElement.appendChild(line2);
+    modalBodyElement.appendChild(line3);
+    modalBodyElement.appendChild(line4);
+
     const headerElem = window.document.createElement('div');
     headerElem.innerText = header;
     modalHeaderElement.appendChild(headerElem);
@@ -97,7 +119,7 @@ function renderHowToGetThere(contentObj){
 function createLocation(){
     const container = window.document.createElement('div');
     const description = window.document.createElement('div');
-    description.innerText = 'כשהגעתם לשער החשמלי של הכפר עליכם להכנס(קוד כניסה ...), להמשיך עם הכביש השמאלי, ולעקוב אחר המפה המצורפת'
+    description.innerText = 'כשהגעתם לכפר, לפתיחת השער הצהוב, הזינו את הקוד (קוד כניסה ...), המשיכו עם הכביש השמאלי, עד שתגיעו לחנייה - ראו מפה. מחכים לכם'
     description.style = 'margin-bottom: 2vh;'
     container.className = 'locationContainer';
     const img = document.createElement('img');
@@ -273,7 +295,7 @@ overflow: hidden;">
  </div> !-->
 
 <div id="modal" class="modal modalHidden">
-  <div style="margin: 20px;">
+  <div style="margin: 20px; margin-right: 4px">
       <div class="navigation">
           <div style="font-size: 26px; margin-bottom: 2px; font-family: sans-serif" onclick="closeModal()">
               X
@@ -307,6 +329,10 @@ overflow: hidden;">
       flex-wrap: wrap;
       justify-content: center;
   }
+
+    .modalLine{
+        margin-bottom: 2vh;
+    }
 
   .header{
     text-align: center;
@@ -405,8 +431,10 @@ overflow: hidden;">
     font-size: 2em;
     display: flex;
     justify-content: center;
+    margin-bottom: 2vh;
 }
 .content {
+    padding-right: 16px;
     font-size: 6vw;
     display: flex;
     flex-direction: column;
@@ -426,7 +454,6 @@ overflow: hidden;">
     right: 0;
     background-color: white;
     z-index: 1;
-    box-shadow: 10px 10px 10px gray;
     margin: 2%;
     opacity: 97%;
     border-radius: 16px;
@@ -560,7 +587,6 @@ overflow: hidden;">
 
 
   .navigation{
-      margin-bottom: 2vh;
       display: flex;
       flex-direction: column-reverse;
   }
@@ -572,7 +598,7 @@ overflow: hidden;">
 }
 
     .navigation{
-        margin-bottom: 2vh;
+        margin-bottom: 0vh;
         display: flex;
         flex-direction: row-reverse;
     }
@@ -581,6 +607,7 @@ overflow: hidden;">
     }
     .goodToKnow{
         padding-right: 20px;
+        margin-bottom: 12px;
     }
 
     @supports not (-webkit-touch-callout: none) {

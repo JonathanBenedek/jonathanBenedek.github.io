@@ -150,14 +150,11 @@ function renderWhatToBring(contentObj){
         const input = window.document.createElement('input');
         input.type = 'checkbox';
 
-
-
         const divContent = window.document.createElement('div');
         divContent.className = 'contentRow';
         const nodeContent = document.createTextNode(whatToBring);
         input.value = whatToBring;
         input.style = 'width: 4vw';
-
         divContent.appendChild(nodeContent);
         row.appendChild(divContent);
         row.appendChild(input);
@@ -582,18 +579,8 @@ overflow: hidden;">
     .goodToKnow{
         padding-right: 20px;
     }
-
-    @supports not (-webkit-touch-callout: none) {
-        /* CSS for other than iOS devices */
-        input {
-            accent-color: white;
-        }
-    }
-
-    @supports (-webkit-touch-callout: none) {
-        /* CSS specific to iOS devices */
-        input {
-        }
+    input {
+        accent-color: white;
     }
     .day{
         font-size: 26px;

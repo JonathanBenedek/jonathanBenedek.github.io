@@ -244,10 +244,7 @@ function closeModal(){
 }
 </script>
   </head>
- <body style="margin: 0;
- display: flex;
- flex-direction: column;
-overflow: hidden;">
+ <body style="">
  <div class="mainPage">
   <div class= "containerOurImg" style="">
     <img class="ourImg" src="assets/weImage.png">
@@ -524,6 +521,15 @@ overflow: hidden;">
 
 
 @media (orientation: landscape) {
+    body{
+        height: 102vh;
+        width: 102vw;
+        position: absolute;
+    }
+    .modal {
+        height: 90vh;
+        width: 90vw;
+    }
     .containerBtn {
         margin-right: 8vw;
     }
@@ -558,7 +564,7 @@ overflow: hidden;">
   }
   .bgImg2{
       right: -3vh;
-      bottom: -2vh;
+      bottom: 0;
       width: 30vh;
       left: unset;
   }
@@ -639,6 +645,10 @@ overflow: hidden;">
         margin-top: 2vh;
     }
     body {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
         margin: 0;
         padding: 0;
     }

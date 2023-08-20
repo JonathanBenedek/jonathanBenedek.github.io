@@ -292,7 +292,7 @@ function closeModal(){
  </div> !-->
 
 <div id="modal" class="modal modalHidden">
-  <div style="margin: 12px; margin-right: 4px">
+  <div style="margin: 12px; margin-right: 4px; flex-grow: 1">
       <div class="navigation">
           <div style="margin-right: 8px;font-size: 26px; margin-bottom: 2px; font-family: sans-serif" onclick="closeModal()">
               X
@@ -430,6 +430,7 @@ function closeModal(){
 .modalBody {
     font-family: 'bodyFont';
     margin-top: 1vh;
+    font-size: 5.9vw
 }
 .modalHeader {
     font-family: titleFont;
@@ -440,7 +441,7 @@ function closeModal(){
 }
 .content {
     padding-right: 16px;
-    font-size: 0.4em;
+    font-size: 0.5em;
     display: flex;
     flex-direction: column;
     overflow: auto;
@@ -496,7 +497,7 @@ function closeModal(){
     flex-direction: column;
 }
 .imgLocation{
-    max-width: 96vw;
+    max-width: 100%;
 }
 .rowContent{
     background-color: rgba(255, 255, 255, 0.15);
@@ -545,14 +546,25 @@ function closeModal(){
     margin-bottom: 0px;
     margin-top: 2vh;
 }
-
+    .day{
+        font-size: 26px;
+        font-weight: 700;
+        margin-bottom: 1vh;
+        margin-top: 2vh;
+    }
 
 @media (orientation: landscape) {
+    .day {
+        font-size: 22px;
+    }
+    .modalBody{
+        font-size: 5.9vh;
+    }
     .content{
         font-size: 0.3em;
     }
     .modalHeader {
-        font-size: 1em;
+        font-size: 1.8em;
     }
     body{
         height: 100%;
@@ -674,12 +686,7 @@ function closeModal(){
         input {
         }
     }
-    .day{
-        font-size: 26px;
-        font-weight: 700;
-        margin-bottom: 1vh;
-        margin-top: 2vh;
-    }
+
     body {
         margin: 0;
         display: flex;

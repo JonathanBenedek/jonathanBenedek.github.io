@@ -340,7 +340,7 @@ function closeModal(){
   .mainPage{
     display: flex;
     flex-direction: column;
-      height: 100vh;
+      height: 100%;
       overflow: auto;
   }
 
@@ -392,7 +392,7 @@ function closeModal(){
     z-index: -1;
     opacity: 55%;
     bottom: 0vh;
-    height: 100vh;
+    height: 100%;
 }
     .bgImg2 {
         position: absolute;
@@ -448,22 +448,45 @@ function closeModal(){
 .howToGetThereIconMethod{
     width: 7vh;
 }
-.modal{
-  height: 96vh;
-    width: 96vw;
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: white;
-    z-index: 1;
-    margin: 2%;
-    opacity: 97%;
-    border-radius: 16px;
-    font-size: 50px;
-    color: black;
-    text-align: end;
+    @supports not (-webkit-touch-callout: none) {
+        /* CSS for other than iOS devices */
+        .modal{
+            height: 98vh;
+            width: 96vw;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: white;
+            z-index: 1;
+            margin: 2%;
+            opacity: 97%;
+            border-radius: 16px;
+            font-size: 50px;
+            color: black;
+            text-align: end;
 
-}
+        }
+    }
+    @supports (-webkit-touch-callout: none) {
+        /* CSS specific to iOS devices */
+        .modal{
+            height: 98%;
+            width: 96%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: white;
+            z-index: 1;
+            margin: 2%;
+            opacity: 97%;
+            border-radius: 16px;
+            font-size: 50px;
+            color: black;
+            text-align: end;
+
+        }
+    }
+
 .locationContainer{
     display: flex;
     justify-content: center;

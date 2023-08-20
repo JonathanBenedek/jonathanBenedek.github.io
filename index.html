@@ -292,9 +292,9 @@ function closeModal(){
  </div> !-->
 
 <div id="modal" class="modal modalHidden">
-  <div style="margin: 20px; margin-right: 4px">
+  <div style="margin: 12px; margin-right: 4px">
       <div class="navigation">
-          <div style="font-size: 26px; margin-bottom: 2px; font-family: sans-serif" onclick="closeModal()">
+          <div style="margin-right: 8px;font-size: 26px; margin-bottom: 2px; font-family: sans-serif" onclick="closeModal()">
               X
           </div>
       </div>
@@ -309,6 +309,18 @@ function closeModal(){
 </body>
 
 <style>
+    /* Example custom scrollbar styles */
+    ::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+    }
     @font-face {
     font-family: titleFont;
     src: url(fonts/AmaticaSC-Regular.ttf);
@@ -440,7 +452,7 @@ function closeModal(){
     display: flex;
     flex-direction: column;
     overflow: auto;
-    max-height: 82vh;
+    max-height: 90%;
 }
 
 

@@ -292,7 +292,7 @@ function closeModal(){
  </div> !-->
 
 <div id="modal" class="modal modalHidden">
-  <div style="margin: 12px; margin-right: 4px; flex-grow: 1">
+  <div class="modalContainer" style="margin: 12px; margin-right: 4px; flex-grow: 1" >
       <div class="navigation">
           <div style="margin-right: 8px;font-size: 26px; margin-bottom: 2px; font-family: sans-serif" onclick="closeModal()">
               X
@@ -554,6 +554,10 @@ function closeModal(){
     }
 
 @media (orientation: landscape) {
+    .modalContainer{
+        display: flex;
+        flex-direction: column;
+    }
     .day {
         font-size: 22px;
     }

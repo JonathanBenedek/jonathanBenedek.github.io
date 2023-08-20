@@ -309,17 +309,9 @@ function closeModal(){
 </body>
 
 <style>
-    /* Example custom scrollbar styles */
-    ::-webkit-scrollbar {
-        width: 12px;
-    }
-
-    ::-webkit-scrollbar-track {
-        background: #f1f1f1;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background: #888;
+    /* Force scrollbars to always be visible on iOS */
+    body {
+        -webkit-overflow-scrolling: touch;
     }
     @font-face {
     font-family: titleFont;

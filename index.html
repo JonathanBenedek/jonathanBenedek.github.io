@@ -440,7 +440,7 @@ function closeModal(){
 }
 .content {
     padding-right: 16px;
-    font-size: 6vw;
+    font-size: 0.4em;
     display: flex;
     flex-direction: column;
     overflow: auto;
@@ -548,6 +548,12 @@ function closeModal(){
 
 
 @media (orientation: landscape) {
+    .content{
+        font-size: 0.3em;
+    }
+    .modalHeader {
+        font-size: 1em;
+    }
     body{
         height: 100%;
         width: 100%;
@@ -556,6 +562,8 @@ function closeModal(){
     .modal {
         height: 90%;
         width: 90%;
+        display: flex;
+        justify-content: right;
     }
     .containerBtn {
         margin-right: 8vw;

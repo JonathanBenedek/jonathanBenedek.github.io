@@ -16,8 +16,11 @@ fileUpload.addEventListener('change', function(event) {
         },
         data:  formData
     }).then(function(res) {
+
         console.log(res);
+        fileUpload.innerText = ':)עוד תמונה'
     }).catch(function(err) {
+        fileUpload.innerText = 'משהו השתבש :( נסה שוב או פנה למנהל'
         console.error(err);
     });
 });

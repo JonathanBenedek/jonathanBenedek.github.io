@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cloudinary-core/2.12.0/cloudinary-core.min.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload to Cloudinary</title>
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const imageInput = document.getElementById("imageInput");
+        const uploadButton = document.getElementById("uploadButton");
+        const preview = document.getElementById("preview");
+        setTimeout(function () {
+            cloudinary.config({
+                cloud_name: "your-cloud-name"
+            });
+            }, 3000);
+
+
+        imageInput.addEventListener("change", handleImageSelect);
+
+        function handleImageSelect(event) {
+            const file = event.target.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function (event) {
+                    const imageUrl = event.target.result;
+
+                    const img = document.createElement("img");
+                    img.src = imageUrl;
+                    preview.innerHTML = "";
+                    preview.appendChild(img);
+                };
+
+                reader.readAsDataURL(file);
+            }
+        }
+
+        uploadButton.addEventListener("click", () => {
+            if (imageInput.files.length === 0) {
+                alert("Please select an image first.");
+                return;
+            }
+
+            const file = imageInput.files[0];
+
+            cloudinary.uploader.upload(file, (result) => {
+                console.log("Upload result:", result);
+
+                // Handle the upload result here
+                if (result.secure_url) {
+                    alert("Image uploaded successfully to Cloudinary!");
+                } else {
+                    alert("Image upload failed. Please try again.");
+                }
+            });
+        });
+    });
+
+</script>
+<body>
+<input type="file" id="imageInput" accept="image/*" capture="camera">
+<button id="uploadButton">Upload to Cloudinary</button>
+<div id="preview"></div>
+</body>
+</html>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 20px;
+    }
+
+    input[type="file"] {
+        display: none;
+    }
+
+    button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+    #preview img {
+        max-width: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+
+</style>
+
+

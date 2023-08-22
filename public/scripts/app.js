@@ -6,6 +6,11 @@ fileUpload.addEventListener('change', function(event) {
     var file = event.target.files[0];
     var formData = new FormData();
     var labelUpload = document.getElementById('labelUpload');
+    var isMoreThen3Sec = false;
+    setTimeout(function() {
+        isMoreThen3Sec = true;
+    }, 3000);
+    labelUpload.innerText = 'איזה כייף! חכה רגע, אנחנו מעלים את התמונה'
     formData.append('file', file);
     formData.append('upload_preset', CLONDINARY_UPLOAD_PRESET);
     axios({
@@ -16,9 +21,14 @@ fileUpload.addEventListener('change', function(event) {
         },
         data:  formData
     }).then(function(res) {
-
+        if (!isMoreThen3Sec) {
+            setTimeout(function() {
+                labelUpload.innerText = 'תודה רבה! :)עוד תמונה?'
+            }, 1000);
+        } else {
+            labelUpload.innerText = 'תודה רבה! :)עוד תמונה?'
+        }
         console.log(res);
-        labelUpload.innerText = ':)עוד תמונה'
     }).catch(function(err) {
         labelUpload.innerText = 'משהו השתבש :( נסה שוב או פנה למנהל'
         console.error(err);

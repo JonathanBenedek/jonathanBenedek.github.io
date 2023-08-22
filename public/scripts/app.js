@@ -23,7 +23,7 @@ fileUpload.addEventListener('change', function(event) {
     }).then(function(res) {
         if (!isMoreThen3Sec) {
             setTimeout(function() {
-                labelUpload.innerText = 'תודה רבה! :)עוד תמונה?'
+                labelUpload.innerText = '?תודה רבה! עוד תמונה'
             }, 1000);
         } else {
             labelUpload.innerText = 'תודה רבה! :)עוד תמונה?'

@@ -2,7 +2,7 @@ var CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/dqtyj8zwp/upload';
 var CLONDINARY_UPLOAD_PRESET = 'wps8scvk';
 var imgPreview = document.getElementById('img-preview');
 var fileUpload = document.getElementById('file-upload');
-
+var labelUpload = document.getElementById('label-upload');
 fileUpload.addEventListener('change', function(event) {
     var file = event.target.files[0];
     var formData = new FormData();
@@ -18,9 +18,9 @@ fileUpload.addEventListener('change', function(event) {
     }).then(function(res) {
 
         console.log(res);
-        fileUpload.innerText = ':)עוד תמונה'
+        labelUpload.innerText = ':)עוד תמונה'
     }).catch(function(err) {
-        fileUpload.innerText = 'משהו השתבש :( נסה שוב או פנה למנהל'
+        labelUpload.innerText = 'משהו השתבש :( נסה שוב או פנה למנהל'
         console.error(err);
     });
 });
